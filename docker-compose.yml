@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: bikeshare_dw
+    environment:
+      POSTGRES_USER: de_porto_bike
+      POSTGRES_PASSWORD: bikeshare123
+      POSTGRES_DB: bikeshare_dw
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
